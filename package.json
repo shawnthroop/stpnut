@@ -8,6 +8,14 @@
     "socket.io": "^2.0.3",
     "ws": "^3.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shawnthroop/stpnut.git"
+  },
+  "keywords": ["pnut.io", "App Stream", "WebSocket"],
+  "bugs": {
+    "url": "https://github.com/shawnthroop/stpnut/issues"
+  },
   "author": "Shawn Throop <shawnthroop@gmail.com> (http://shawnthroop.com)",
   "license": "MIT"
 }
