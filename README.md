@@ -15,9 +15,9 @@ var config = {
     clientId: 'YOUR_CLIENT_ID',
     clientSecret: 'YOUR_CLIENT_SECRET'
 };
-```
 
 var client = new pnut.Client(config);
+```
 
 > Note: These values can be found in the "Develop" section of [your pnut.io Account][account].
 
@@ -80,7 +80,7 @@ client.monitorWebSocket(endpoint, function(eventName, eventData) {
 });
 ```
 
-> Note: Currently, `Notification.createNotificationFromAppStreamPayload` only supports creating follow, bookmark, mention, and repost notifications.
+> Note: Currently, `pnut.Notification.createNotificationFromAppStreamPayload` only supports creating follow, bookmark, mention, and repost notifications.
 
 ## Contact
 
