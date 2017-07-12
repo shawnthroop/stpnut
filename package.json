@@ -1,6 +1,6 @@
 {
   "name": "stpnut",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A client object responsible for fetching and monitoring a filtered pnut.io App Stream.",
   "main": "stpnut.js",
   "dependencies": {
