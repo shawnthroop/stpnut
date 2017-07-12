@@ -1,0 +1,13 @@
+{
+  "name": "stpnut",
+  "version": "1.0.0",
+  "description": "A client object responsible for fetching and monitoring a filtered pnut.io App Stream.",
+  "main": "stpnut.js",
+  "dependencies": {
+    "request": "^2.55.0",
+    "socket.io": "^2.0.3",
+    "ws": "^3.0.0"
+  },
+  "author": "Shawn Throop <shawnthroop@gmail.com> (http://shawnthroop.com)",
+  "license": "MIT"
+}
