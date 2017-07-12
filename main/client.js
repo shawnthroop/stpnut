@@ -1,3 +1,5 @@
+'use strict';
+
 const Request = require('request');
 const Query = require('querystring');
 const WebSocket = require('ws');
@@ -265,30 +267,12 @@ Client.prototype.removeStream = function(parameters, callback) {
 
 
 
-// Creates a stream with the coresponding key and object_types.
-// - parameters: { key: String, object_types: Array<String> }
+// Creates a stream with the coresponding key and objectTypes.
+// - parameters: { key: String, objectTypes: Array<String> }
 // - callback: function(error: Error, meta: JSON, data: JSON)
 
 Client.prototype.createStream = function (parameters, callback) {
-    var error = ensureKeys(['key', 'object_types'], parameters);
-
-    if (error) {
-        callback(error);
-        return;
-    }
-
-    parameters.type = 'long_poll';
-    performAuthenticatedRequest(this.token,  { method: 'POST', path: '/streams', body: parameters }, callback);
-};
-
-
-
-// Updates a stream with the coresponding "key" with provided "object_types" value.
-// - parameters: { key: String, object_types: Array<String> }
-// - callback: function(error: Error, meta: JSON, data: JSON)
-
-Client.prototype.updateStream = function(parameters, callback) {
-    var error = ensureKeys(['key', 'object_types'], parameters);
+    var error = ensureKeys(['key', 'objectTypes'], parameters);
 
     if (error) {
         callback(error);
@@ -296,7 +280,30 @@ Client.prototype.updateStream = function(parameters, callback) {
     }
 
     var body = {
-        object_types: parameters.object_types
+        type: 'long_poll',
+        key: parameters.key,
+        object_types: parameters.objectTypes
+    };
+
+    performAuthenticatedRequest(this.token,  { method: 'POST', path: '/streams', body: body }, callback);
+};
+
+
+
+// Updates a stream with the coresponding "key" with provided "objectTypes" value.
+// - parameters: { key: String, objectTypes: Array<String> }
+// - callback: function(error: Error, meta: JSON, data: JSON)
+
+Client.prototype.updateStream = function(parameters, callback) {
+    var error = ensureKeys(['key', 'objectTypes'], parameters);
+
+    if (error) {
+        callback(error);
+        return;
+    }
+
+    var body = {
+        object_types: parameters.objectTypes
     };
 
     performAuthenticatedRequest(this.token, { method: 'PUT', path: '/streams/' + parameters.key, body: body }, callback);
@@ -305,7 +312,7 @@ Client.prototype.updateStream = function(parameters, callback) {
 
 
 // Retrieves stream with matching key. If stream doesn't exist it is created.
-// - stream: { key: String, object_types: Array<String> }
+// - stream: { key: String, objectTypes: Array<String> }
 // - callback: function(error: Error, meta: JSON, data: JSON)
 
 Client.prototype.retrieveOrCreateStream = function(stream, callback) {

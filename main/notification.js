@@ -1,3 +1,5 @@
+'use strict';
+
 // An object describing a push notification.
 
 function Notification(kind, message, userIds, objectId) {

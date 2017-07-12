@@ -1,3 +1,5 @@
+'use strict';
+
 const Client = require('./main/client.js');
 const Notification = require('./main/notification.js');
 

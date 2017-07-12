@@ -1,6 +1,6 @@
 {
   "name": "stpnut",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A client object responsible for fetching and monitoring a filtered pnut.io App Stream.",
   "main": "stpnut.js",
   "dependencies": {
@@ -15,6 +15,10 @@
   "keywords": ["pnut.io", "App Stream", "WebSocket"],
   "bugs": {
     "url": "https://github.com/shawnthroop/stpnut/issues"
+  },
+  "engines": {
+      "node": "^6.8.1",
+      "npm": "^3.10.8"
   },
   "author": "Shawn Throop <shawnthroop@gmail.com> (http://shawnthroop.com)",
   "license": "MIT"

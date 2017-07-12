@@ -47,7 +47,7 @@ Once you have an authenticated `Client` object you can create, remove, and edit 
 ```javascript
 var stream = {
     key: 'main',
-    object_types: ['bookmark', 'follow', 'post']
+    objectTypes: ['bookmark', 'follow', 'post']
 };
 
 client.retrieveOrCreateStream(stream, function(err, meta, data) {
